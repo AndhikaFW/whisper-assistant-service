@@ -10,6 +10,7 @@ default:
 	cp -r models ../../
 
 example:
+	mkdir bin; \
 	$(CC) $(CFLAGS) -o bin/output examples/output.cpp
 
 clean: 
