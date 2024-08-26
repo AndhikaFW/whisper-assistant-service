@@ -17,7 +17,7 @@ Start cloning the repository with required submodules:
 ```bash
 git clone --recurse-submodules https://github.com/AndhikaFW/whisper-assistant-service.git
 ```
-Then, download one of the Whisper [models](./lib/whisper.cpp/models/README.md) converted in [`ggml` format](#ggml-format). For example:
+Then, download one of the Whisper models converted in [`ggml` format](#ggml-format). For example:
 
 ```bash
 bash ./lib/whisper.cpp/models/download-ggml-model.sh base.en
@@ -56,13 +56,13 @@ The original models are converted to a custom binary format. This allows to pack
 - vocabulary
 - weights
 
-You can download the converted models using the [lib/whisper.cpp/models/download-ggml-model.sh](models/download-ggml-model.sh) script
+You can download the converted models using the [lib/whisper.cpp/models/download-ggml-model.sh](lib/whisper.cpp/models/download-ggml-model.sh) script
 or manually from here:
 
 - https://huggingface.co/ggerganov/whisper.cpp
 - https://ggml.ggerganov.com
 
-For more details, see the conversion script [lib/whisper.cpp/models/convert-pt-to-ggml.py](models/convert-pt-to-ggml.py) or [lib/whisper.cpp/models/README.md](models/README.md).
+For more details, see the conversion script [lib/whisper.cpp/models/convert-pt-to-ggml.py](lib/whisper.cpp/models/convert-pt-to-ggml.py) or [lib/whisper.cpp/models/README.md](models/README.md).
 
 
 ## License
