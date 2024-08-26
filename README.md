@@ -12,18 +12,7 @@ This is a basic Voice Assistant example that accepts voice commands from the mic
 
 ## Building
 
-Start cloning the repository with required submodules:
-
-```bash
-git clone --recurse-submodules https://github.com/AndhikaFW/whisper-assistant-service.git
-```
-Then, download one of the Whisper models converted in [`ggml` format](#ggml-format). For example:
-
-```bash
-bash ./lib/whisper.cpp/models/download-ggml-model.sh base.en
-```
-
-This tool depends on SDL2 library to capture audio from the microphone. You can build it like this:
+This tool depends on SDL2 library to capture audio from the microphone. Here's how to install:
 
 ```bash
 # Install SDL2
@@ -35,7 +24,22 @@ sudo dnf install SDL2 SDL2-devel
 
 # Install SDL2 on Mac OS
 brew install sdl2
+```
 
+Start cloning the repository with the required submodules:
+
+```bash
+git clone --recurse-submodules https://github.com/AndhikaFW/whisper-assistant-service.git
+```
+Then, download one of the Whisper models converted in [`ggml` format](#ggml-format). For example:
+
+```bash
+bash ./lib/whisper.cpp/models/download-ggml-model.sh base.en
+```
+
+Now you can build it like this:
+
+```bash
 make
 ```
 
@@ -56,13 +60,13 @@ The original models are converted to a custom binary format. This allows to pack
 - vocabulary
 - weights
 
-You can download the converted models using the [lib/whisper.cpp/models/download-ggml-model.sh](lib/whisper.cpp/models/download-ggml-model.sh) script
+You can download the converted models using the ``lib/whisper.cpp/models/download-ggml-model.sh`` script
 or manually from here:
 
 - https://huggingface.co/ggerganov/whisper.cpp
 - https://ggml.ggerganov.com
 
-For more details, see the conversion script [lib/whisper.cpp/models/convert-pt-to-ggml.py](lib/whisper.cpp/models/convert-pt-to-ggml.py) or [lib/whisper.cpp/models/README.md](models/README.md).
+For more details, see the conversion script ``lib/whisper.cpp/models/convert-pt-to-ggml.py`` or ``lib/whisper.cpp/models/README.md``.
 
 
 ## License
