@@ -1,0 +1,5 @@
+# ignore main executable
+main
+
+# ignore ALL files in ANY directory named models
+models/
