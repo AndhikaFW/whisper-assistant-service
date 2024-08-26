@@ -157,8 +157,7 @@ static bool voice_activation(word *&txt_word, size_t n, const char *prompt){
 static std::string command(word *&txt_word, size_t n, std::string &txtmin){
   std::string argsh;
   struct stat sb;
-  std::string dir = "dhika/assistant/";
-  printf("\n\nWord count: %ld, Program directory: %s\n\nChecking:", n, dir.c_str());
+  printf("\n\nWord count: %ld\n\nChecking:", n);
   for (size_t i = 0; i < n; i++) {
     std::string name;
     if (!(txt_word+i)->status) {
@@ -166,7 +165,7 @@ static std::string command(word *&txt_word, size_t n, std::string &txtmin){
       for (size_t j = 0; j < n-i; j++) {
           name += (txt_word+i+j)->word;
           printf("\n%s", name.c_str());
-          if (stat((dir+"scripts/"+name+".sh").c_str(), &sb) == 0){
+          if (stat(("scripts/"+name+".sh").c_str(), &sb) == 0){
             printf("\n\nExclude:");
             for (size_t k=i; k <= i+j; k++) {
               (txt_word+k)->status = true; 
@@ -181,7 +180,7 @@ static std::string command(word *&txt_word, size_t n, std::string &txtmin){
                   argsh+=(txt_word+i)->word;
               }
             }
-            return dir+"scripts/"+name+".sh "+argsh;
+            return "scripts/"+name+".sh "+argsh;
           }
       }
       printf("\n(Done)");
@@ -190,7 +189,7 @@ static std::string command(word *&txt_word, size_t n, std::string &txtmin){
   for (size_t i = 0; i < n; i++) {
       txtmin+= (txt_word+i)->word;
   }
-  txtmin=dir+"aiscripts/"+txtmin+".sh";
+  txtmin="aiscripts/"+txtmin+".sh";
   return "";
 }
 
