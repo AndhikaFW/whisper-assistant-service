@@ -10,8 +10,10 @@ default:
 	cp -r models ../../
 
 example:
-	mkdir bin; \
-	$(CC) $(CFLAGS) -o bin/output examples/output.cpp
+	if [ ! -d bin ]; then mkdir bin; fi; \
+	$(CC) $(CFLAGS) -o bin/output examples/output.cpp; \
+	printf '#!/usr/bin/bash\n\n%s' '../bin/output' > scripts/output.sh
+	chmod +x scripts/output.sh
 
 clean: 
 	rm -rvf main
