@@ -1,4 +1,6 @@
 LIBSPATH = lib/
+CC = g++
+CFLAGS = -Wall
 
 default: 
 	cp main.cpp $(LIBSPATH)whisper.cpp/examples/command/command.cpp; \
@@ -6,6 +8,9 @@ default:
 	make command; \
 	cp command ../../main; \
 	cp -r models ../../
+
+example:
+	$(CC) $(CFLAGS) -o bin/output examples/output.cpp
 
 clean: 
 	rm -rvf main

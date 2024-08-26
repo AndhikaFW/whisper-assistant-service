@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string.h>
 #include <stdio.h>
-#include "keys.h"
+#include "../src/tools.h"
 
 using namespace std;
  
@@ -13,7 +13,7 @@ int main(int argc, char* argv[])
     *keys = strdup("open");
     *(keys+1) = strdup("firefoxnow");
     printf("Argument: %s\nWords   :", argv[1]);
-    for (size_t i = 2; i < argc; i++) {
+    for (int i = 2; i < argc; i++) {
       printf(" %s", argv[i]);
     }
     scanWord(argc, argv, word_s, key);

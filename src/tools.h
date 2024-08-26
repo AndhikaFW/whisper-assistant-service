@@ -32,7 +32,7 @@ unsigned int scanWords(int n, char* txt_word[], bool *&status, int x, char **&ke
             for (int j = 0; j < n-i; j++) {
                 words += txt_word[i+j];
                 printf("\n%s", words.c_str());
-                for (int k = 0; k < sizeof(keys)/sizeof(char**); k++) {
+                for (size_t k = 0; k < sizeof(keys)/sizeof(char**); k++) {
                     if (strcmp(*(keys+k), words.c_str())==0){
                       printf("\n\nExclude:");
                       for (int l=i; l <= i+j; l++) {
