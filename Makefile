@@ -3,7 +3,7 @@ CC = g++
 CFLAGS = -Wall
 
 default: 
-	cp main.cpp $(LIBSPATH)whisper.cpp/examples/command/command.cpp; \
+	cp src/main.cpp $(LIBSPATH)whisper.cpp/examples/command/command.cpp; \
 	cd $(LIBSPATH)whisper.cpp; \
 	make command; \
 	cp command ../../main; \
